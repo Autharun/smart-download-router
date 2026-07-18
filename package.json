@@ -1,0 +1,35 @@
+{
+  "name": "smart-download-router",
+  "version": "0.1.0",
+  "description": "Chrome and Edge extension that routes downloads into configured folders by website.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "dev": "vite build --watch",
+    "build": "npm run clean && tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run test && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "chrome-extension",
+    "downloads",
+    "manifest-v3",
+    "typescript",
+    "vite"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.2.0",
+    "@types/node": "^24.13.3",
+    "prettier": "^3.9.4",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
+  }
+}
